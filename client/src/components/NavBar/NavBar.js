@@ -9,7 +9,7 @@ import * as style from '@dicebear/avatars-initials-sprites';
 
 function NavBar() {
   const classes = useStyles();
-  const PF = 'http://localhost:4000/image/';
+  const PF = '/image/';
 
   const { user, dispatch } = useContext(Context);
   const logOut = () => {

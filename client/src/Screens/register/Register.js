@@ -19,14 +19,14 @@ function Register() {
     setError(false);
     try {
       const { data } = await axios.post(
-        `http://localhost:4000/api/v3/users/register`,
+        `/api/v3/users/register`,
         {
           username,
           email,
           password,
         }
       );
-      data && window.location.replace("http://localhost:3000/login");
+      data && window.location.replace("/login");
     } catch (erorr) {
       error && window.location.reload();
       setError(true);

@@ -16,7 +16,7 @@ function HomeScreen() {
     const fetchPosts = async () => {
       setLoading(true)
       const { data } = await axios.get(
-        `http://127.0.0.1:4000/api/v3/posts${search}`
+        `/api/v3/posts${search}`
       );
       setPosts(data.data);
       setLoading(false)

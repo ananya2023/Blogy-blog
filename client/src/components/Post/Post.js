@@ -4,7 +4,7 @@ import makeStyles from './style';
 
 function Post({ post }) {
   const classes = makeStyles();
-  const file = 'http://localhost:4000/image/';
+  const file = '/image/';
   return (
     <div className={classes.post}>
       <img className={classes.postImage} src={file + post.image} alt="post" />

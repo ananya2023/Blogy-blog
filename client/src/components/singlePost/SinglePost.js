@@ -19,12 +19,12 @@ function SinglePost() {
   const [update, setUpdate] = useState(false);
   const path = location.pathname.split('/')[2];
   const { user } = useContext(Context);
-  const file = 'http://localhost:4000/image/';
+  const file = '/image/';
 
   useEffect(() => {
     const fetchPost = async () => {
       const { data } = await axios.get(
-        `http://localhost:4000/api/v3/posts/${path}`
+        `/api/v3/posts/${path}`
       );
       setPostScreen(data.doc);
       setTitle(data.doc.title);
@@ -36,7 +36,7 @@ function SinglePost() {
   const deleteHandler = async () => {
     try {
       await axios.delete(
-        `http://localhost:4000/api/v3/posts/${postScreen._id}`,
+        `/api/v3/posts/${postScreen._id}`,
         {
           data: { username: user.data.username },
           headers: {
@@ -44,13 +44,13 @@ function SinglePost() {
           }
         },
       );
-      window.location.replace('http://localhost:3000/');
+      window.location.replace('/');
     } catch (error) { }
   };
 
   const updateHandler = async () => {
     try {
-      await axios.put(`http://localhost:4000/api/v3/posts/${postScreen._id}`, {
+      await axios.put(`/api/v3/posts/${postScreen._id}`, {
         username: user.data.username,
         title,
         description,

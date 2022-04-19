@@ -46,7 +46,7 @@ function WritePost() {
       formData.append("file", file);
       newPost.image = fileName;
       try {
-        await axios.post("http://localhost:4000/api/v3/upload", formData,
+        await axios.post("/api/v3/upload", formData,
           {
             headers: {
               authorization: `Bearer ${user.token}`
@@ -56,7 +56,7 @@ function WritePost() {
       } catch (error) { }
       try {
         const { data } = await axios.post(
-          "http://localhost:4000/api/v3/posts/post-create",
+          "/api/v3/posts/post-create",
           newPost, {
           headers: {
             authorization: `Bearer ${user.token}`

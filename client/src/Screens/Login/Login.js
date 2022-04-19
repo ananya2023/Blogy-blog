@@ -28,7 +28,7 @@ function Login() {
     e.preventDefault();
     dispatch(LoginRequest);
     try {
-      const { data } = await axios.post(`http://localhost:4000/api/v3/users/login`,
+      const { data } = await axios.post(`/api/v3/users/login`,
         {
           email: userRef.current.value,
           password: userRef.current.value,
