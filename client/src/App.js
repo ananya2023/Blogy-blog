@@ -12,6 +12,7 @@ import './App.css';
 import { Container } from '@material-ui/core';
 import { useContext } from 'react';
 import { Context } from './context/Context';
+import Footer from './components/Footer/Footer';
 
 function App() {
   const { user } = useContext(Context);
@@ -49,6 +50,7 @@ function App() {
           </Switch>
         </Container>
       </Router>
+      <Footer />
     </>
   );
 }
